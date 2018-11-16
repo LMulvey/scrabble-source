@@ -1,28 +1,21 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { useControlledValue } from './hooks';
+import WordFilter from './components/WordFilter';
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-    );
-  }
+function App() {
+  const [queryValue, handleQueryChange] = useControlledValue('');
+  return (
+    <div className="App">
+      <input
+        className="wordQuery__input"
+        maxLength="9"
+        placeholder="What letters do you have?"
+        value={queryValue}
+        onChange={handleQueryChange}
+      />
+      <WordFilter query={queryValue} />
+    </div>
+  );
 }
 
 export default App;
