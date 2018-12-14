@@ -5,9 +5,10 @@ import { scoreWord, onlyTheseLetters } from '../lib/utilities.js';
 
 function filterWordList(query) {
   const re = new RegExp(`[${query}]`, 'i');
+  const withoutWildcards = query.replace(/\?/g, '');
   return wordList
         .filter(word => word.length <= (query.length))
-        .filter(word => query.split('').every(letter => word.includes(letter)))
+        .filter(word => withoutWildcards.split('').every(letter => word.includes(letter)))
         .filter(word => onlyTheseLetters(query, word))
         .sort((a, b) => scoreWord(b) - scoreWord(a))
         .splice(0, 50)

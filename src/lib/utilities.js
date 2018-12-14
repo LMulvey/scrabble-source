@@ -12,11 +12,19 @@ export const scoreWord = word => {
 export const onlyTheseLetters = (query, word) => {
     const queryLetters = query.split('');
     const wordLetters = word.split('');
+    let wildcards = queryLetters.reduce((amt, curr) => {
+        if (curr === '?') amt += 1;
+        return amt;
+    }, 0);
     let validWord = true;
     wordLetters.forEach(letter => {
         const indexOf = queryLetters.indexOf(letter);
         if (indexOf === -1) {
-            validWord = false;
+            if (wildcards > 0) {
+                wildcards -= 1;
+            } else {
+                validWord = false;
+            }
         } else {
             queryLetters.splice(indexOf, -1)
         }

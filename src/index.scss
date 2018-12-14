@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css?family=Bungee+Shade");
+
 body {
   margin: 10vh 0;
   padding: 0;
@@ -8,9 +10,17 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='12' viewBox='0 0 20 12'%3E%3Cg fill-rule='evenodd'%3E%3Cg id='charlie-brown' fill='%23303031' fill-opacity='0.07'%3E%3Cpath d='M9.8 12L0 2.2V.8l10 10 10-10v1.4L10.2 12h-.4zm-4 0L0 6.2V4.8L7.2 12H5.8zm8.4 0L20 6.2V4.8L12.8 12h1.4zM9.8 0l.2.2.2-.2h-.4zm-4 0L10 4.2 14.2 0h-1.4L10 2.8 7.2 0H5.8z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-  background-color: #EB3349;  /* fallback for old browsers */
-  background-color: -webkit-linear-gradient(to right, #F45C43, #EB3349);  /* Chrome 10-25, Safari 5.1-6 */
-  background-color: linear-gradient(to right, #F45C43, #EB3349); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background-color: #eb3349; /* fallback for old browsers */
+  background-color: -webkit-linear-gradient(
+    to right,
+    #f45c43,
+    #eb3349
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background-color: linear-gradient(
+    to right,
+    #f45c43,
+    #eb3349
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 code {
@@ -18,22 +28,38 @@ code {
     monospace;
 }
 
+.wordmark__h1 {
+  font-family: "Bungee Shade", cursive;
+  text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.4);
+  margin: 0 0 5px 0;
+  color: white;
+  font-size: 90px;
+}
+
+.submark__p {
+  color: white;
+  text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.15);
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin: 0 0 88px 0;
+  font-size: 24px;
+}
+
 .words__container {
-    display: flex;
-    flex-flow: row;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
 }
 
 .word__item {
-    display: inline-block;
-    padding: 8px;
-    border-radius: 6px;
-    background: #F6F6F6;
-    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.15);
-    font-size: 24px;
-    margin: 0 8px;
-
+  display: inline-block;
+  padding: 8px;
+  border-radius: 6px;
+  background: #f6f6f6;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.15);
+  font-size: 24px;
+  margin: 8px;
 }
 
 .App {
