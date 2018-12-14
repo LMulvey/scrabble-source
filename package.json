@@ -2,6 +2,7 @@
   "name": "scrabble-master",
   "version": "0.1.0",
   "private": true,
+  "homepage": "http://leemulvey.com/scrabble",
   "dependencies": {
     "node-sass": "^4.10.0",
     "react": "^16.7.0-alpha.2",
